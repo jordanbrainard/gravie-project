@@ -14,12 +14,12 @@ class GameService(
         val jsonResponse = giantBombClient.getGames(name)
 
         return jsonResponse.let {
-            Game(it.get("name"), it.get("image.icon_url"))
+            Game(it.get("id")!!, it.get("name"), it.get("image.icon_url"))
         }
     }
 
     fun rentGame(request: RentalRequest): Int {
-        val game = Game(request.name, null, true)
+        val game = Game(request.id, request.name, null, true)
         //insert into database and associate rented game with userID
         return 1
     }
