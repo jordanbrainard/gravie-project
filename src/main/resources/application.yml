@@ -1,0 +1,10 @@
+micronaut:
+  application:
+    name: games
+netty:
+  default:
+    allocator:
+      max-order: 3
+backends:
+  giant-bomb:
+    path: http://www.giantbomb.com/api/search/?api_key=0c940766d95d155e95f9a365550f533e52848686&format=json&limit=1&query={name}&resources=game
