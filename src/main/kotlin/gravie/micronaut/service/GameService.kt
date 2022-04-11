@@ -10,12 +10,8 @@ class GameService(
     private val giantBombClient: GiantBombClient
 ) {
 
-    fun getGames(name: String): Game? {
-        val jsonResponse = giantBombClient.getGames(name)
-
-        return jsonResponse.let {
-            Game(it.get("id")!!, it.get("name"), it.get("image.icon_url"))
-        }
+    fun getGames(name: String): List<Game?> {
+        return giantBombClient.getGames(name).results
     }
 
     fun rentGame(request: RentalRequest): Int {

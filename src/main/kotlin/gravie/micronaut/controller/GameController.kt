@@ -13,7 +13,7 @@ class GameController(
 
     @Produces(MediaType.APPLICATION_JSON)
     @Get("/{name}")
-    fun searchGame(name: String): Game? {
+    fun searchGame(name: String): List<Game?> {
         return gameService.getGames(name)
     }
 
