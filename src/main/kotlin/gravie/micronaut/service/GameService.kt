@@ -2,7 +2,7 @@ package gravie.micronaut.service
 
 import gravie.micronaut.client.GiantBombClient
 import gravie.micronaut.domain.Game
-import gravie.micronaut.domain.RentalRequest
+import gravie.micronaut.domain.AddGameToCartRequest
 import jakarta.inject.Singleton
 
 @Singleton
@@ -14,7 +14,7 @@ class GameService(
         return giantBombClient.getGames(name).results
     }
 
-    fun rentGame(request: RentalRequest): Int {
+    fun rentGame(request: AddGameToCartRequest): Int {
         val game = Game(request.id, request.name, null, true)
         //insert into database and associate rented game with userID
         return 1

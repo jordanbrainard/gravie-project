@@ -1,7 +1,7 @@
 package gravie.micronaut.controller
 
 import gravie.micronaut.domain.Game
-import gravie.micronaut.domain.RentalRequest
+import gravie.micronaut.domain.AddGameToCartRequest
 import gravie.micronaut.service.GameService
 import io.micronaut.http.MediaType
 import io.micronaut.http.annotation.*
@@ -19,7 +19,7 @@ class GameController(
 
     @Produces(MediaType.APPLICATION_JSON)
     @Post("/rent")
-    fun rentGame(@Body rentalRequest: RentalRequest): Int {
-        return gameService.rentGame(rentalRequest)
+    fun rentGame(@Body addGameToCartRequest: AddGameToCartRequest): Int {
+        return gameService.rentGame(addGameToCartRequest)
     }
 }
