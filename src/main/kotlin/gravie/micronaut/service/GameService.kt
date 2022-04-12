@@ -3,10 +3,10 @@ package gravie.micronaut.service
 import gravie.micronaut.client.GiantBombClient
 import gravie.micronaut.domain.Game
 import gravie.micronaut.domain.AddGameToCartRequest
-import jakarta.inject.Singleton
+import javax.inject.Singleton
 
 @Singleton
-class GameService(
+open class GameService(
     private val giantBombClient: GiantBombClient
 ) {
 

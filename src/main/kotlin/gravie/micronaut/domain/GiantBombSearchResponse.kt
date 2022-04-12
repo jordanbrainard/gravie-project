@@ -7,5 +7,5 @@ data class GiantBombSearchResponse(
     val numberOfPageResults: Int,
     val numberOfTotalResults: Int,
     val status: Int,
-    val results: List<Game>
+    val results: List<Game?>
 )

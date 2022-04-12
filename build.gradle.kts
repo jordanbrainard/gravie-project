@@ -5,6 +5,7 @@ plugins {
     id("com.github.johnrengelman.shadow") version "7.1.2"
     id("io.micronaut.application") version "3.3.2"
     kotlin("plugin.serialization") version "1.6.20"
+    groovy
 }
 
 version = "0.1"
@@ -25,6 +26,12 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
+    implementation("javax.inject:javax.inject:1")
+
+    testImplementation("org.codehaus.groovy:groovy-all:3.0.8")
+    testImplementation(platform("org.spockframework:spock-bom:2.0-M4-groovy-3.0"))
+    testImplementation("org.spockframework:spock-core:2.0-M4-groovy-3.0")
+    testImplementation("io.micronaut.test:micronaut-test-spock")
 
     annotationProcessor("io.micronaut:micronaut-inject-java:1.0.0")
 
@@ -46,7 +53,7 @@ java {
 tasks {
     compileKotlin {
         kotlinOptions {
-            jvmTarget = "17"
+            jvmTarget = "16"
         }
     }
     compileTestKotlin {
