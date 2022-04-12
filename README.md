@@ -24,6 +24,7 @@ given the timebox, I was not able to accomplish everything
  - Investigate framework-API interaction issue
  - Make services and controllers more robust for full-fledged service
  - Add database
+ - Intuitive UI experience rather than just endpoints
 
 
 ### Result of running request with service making client call:
